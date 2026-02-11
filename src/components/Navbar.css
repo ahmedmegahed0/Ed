@@ -1,0 +1,255 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 0.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo-text h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.logo-text p {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-secondary);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.user-details {
+  text-align: right;
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.user-status {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.status-active {
+  color: var(--success-color);
+}
+
+.status-inactive {
+  color: var(--warning-color);
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--danger-color);
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-logout:hover {
+  background-color: #fee2e2;
+}
+
+[data-theme="dark"] .btn-logout:hover {
+  background-color: #991b1b;
+  color: #fee2e2;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-user-info {
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.mobile-user-info .user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.mobile-user-info .user-email {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+}
+
+.mobile-user-info .user-status {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.mobile-link:hover {
+  background-color: var(--bg-secondary);
+}
+
+.mobile-link.primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+}
+
+.mobile-link.primary:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.logout-link {
+  color: var(--danger-color);
+}
+
+.logout-link:hover {
+  background-color: #fee2e2;
+}
+
+[data-theme="dark"] .logout-link:hover {
+  background-color: #991b1b;
+  color: #fee2e2;
+}
